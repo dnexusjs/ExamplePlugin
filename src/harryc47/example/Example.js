@@ -16,7 +16,7 @@ export class Example extends PluginBase {
         this.getNexus().getPluginManager().registerEvents(new EventListener())
         this.getNexus().getPluginManager().registerEvent(Events.PLUGIN_ENABLE_EVENT, (plugin) => {
         })
-        this.getNexus().getScheduler().scheduleDelayedRepeatingTask(new TestScheduler(), 20, 1)
+        this.getNexus().getScheduler().scheduleDelayedTask(new TestScheduler(), 1000*3, )
     }
 
     onDisable() {
