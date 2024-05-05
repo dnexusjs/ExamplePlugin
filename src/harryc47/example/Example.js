@@ -2,6 +2,7 @@ import { Events } from "../../../../../src/event/Events.js";
 import { PluginBase } from "../../../../../src/plugin/PluginBase.js";
 import { TestCommand } from "./command/TestCommand.js";
 import { EventListener } from "./EventListener.js";
+import { TestScheduler } from "./scheduler/TestScheduler.js";
 
 export class Example extends PluginBase {
 
@@ -15,6 +16,7 @@ export class Example extends PluginBase {
         this.getNexus().getPluginManager().registerEvents(new EventListener())
         this.getNexus().getPluginManager().registerEvent(Events.PLUGIN_ENABLE_EVENT, (plugin) => {
         })
+        this.getNexus().getScheduler().scheduleDelayedRepeatingTask(new TestScheduler(), 20, 1)
     }
 
     onDisable() {
