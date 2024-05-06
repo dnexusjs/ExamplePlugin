@@ -7,7 +7,7 @@ export class TestScheduler extends Task {
     onRun() {
         console.log("Hello World!");
         // Cancel task
-        throw new CancelTaskException()
+        // throw new CancelTaskException()
     }
 
     onCancel() {
